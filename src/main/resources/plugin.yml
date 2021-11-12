@@ -1,0 +1,9 @@
+main: me.xxben.simpleglobalchat
+version: 1.0
+name: SimpleGlobalChat
+description: Global chat made simple and easy
+author: xxBen
+
+commands:
+  global:
+    aliases: [g, globalchat]
