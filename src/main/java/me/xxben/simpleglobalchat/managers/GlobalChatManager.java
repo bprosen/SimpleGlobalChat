@@ -49,7 +49,8 @@ public class GlobalChatManager {
         SimpleGlobalChat.getInstance().getProxy().getPlayers().forEach(online -> {
             if (!mutedPlayers.contains(online.getName())) { // if not muted, send
 
-                String msg = Utils.translate("&6&lGLOBAL &d" + sender.getDisplayName() + " " + message);
+                Configuration config = SimpleGlobalChat.getFileManager().get("config");
+                String msg = Utils.translate(config.getString("message-prefix") + " &d" + sender.getDisplayName() + " " + message);
                 online.sendMessage(new TextComponent(msg));
             }
         });
